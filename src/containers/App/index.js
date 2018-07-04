@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	class App extends React.Component {
 
 		dupa() {
-			const sraka = "hehe";
+			const sraka = "testasdsadsader";
 
 			return (
 				<p>{sraka}</p>
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 		render() {
 			return (
-				<h1>Test hehe {this.dupa()}</h1>
+				<h1>Test :){this.dupa()}</h1>
 		);
 		}
 	}

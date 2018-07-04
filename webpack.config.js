@@ -1,8 +1,24 @@
 const path = require('path');
-const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
+	optimization: {
+		splitChunks: {
+			cacheGroups: {
+				styles: {
+					name: 'styles',
+					test: /\.(sa|sc|c)ss$/,
+					chunks: 'all',
+					enforce: true
+				}
+			}
+		}
+	},
+	plugins: [
+		new MiniCssExtractPlugin({
+			filename: "styles.css",
+		})
+	],
 	entry: './src/containers/App/index.js',
 	output: {
 		path: path.resolve('./'),
@@ -10,7 +26,7 @@ module.exports = {
 	},
 	watch: true,
 	resolve: {
-		extensions: ['*', '.js', '.jsx']
+		extensions: ['*', '.js', '.jsx', '.scss']
 	},
 	module: {
 		rules: [
@@ -34,46 +50,23 @@ module.exports = {
 					}
 				]
 			}, {
-				test: /\.(sa|sc|c)ss$/,
+				test: /\.scss$/,
 				use: [
 					{
 						loader: MiniCssExtractPlugin.loader,
+						options: {
+							publicPath: './'
+						}
 					},
 					{
-						loader: 'css-loader',
-						options: {
-							modules: true,
-							minimize: false,
-							importLoaders: 2,
-							sourceMap: false
-						}
+						loader: 'css-loader'
 					}, {
-						loader: 'postcss-loader',
-						options: {
-							sourceMap: true
-						}
+						loader: 'postcss-loader'
 					}, {
-						loader: 'sass-loader',
-						options: {
-							outputStyle: 'expanded',
-							sourceMap: false,
-							sourceMapContents: false
-						}
+						loader: 'sass-loader'
 					}],
 
 			}
 		]
-	},
-	plugins: [
-		new HtmlWebPackPlugin({
-			template: "./src/templates/index.html",
-			filename: "./index.html"
-		}),
-		new MiniCssExtractPlugin({
-			// Options similar to the same options in webpackOptions.output
-			// both options are optional
-			filename: "[name].css",
-			chunkFilename: "[id].css"
-		})
-	]
+	}
 };
