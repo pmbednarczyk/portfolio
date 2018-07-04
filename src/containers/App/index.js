@@ -1,11 +1,13 @@
+import "../../theme/styles.scss";
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 
 document.addEventListener('DOMContentLoaded', () => {
 	class App extends React.Component {
 
 		dupa() {
-			const sraka = "testasdsadsader";
+			const sraka = "heee 2";
 
 			return (
 				<p>{sraka}</p>

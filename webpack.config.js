@@ -1,10 +1,12 @@
 const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 module.exports = {
 	optimization: {
 		splitChunks: {
 			cacheGroups: {
+				default: false,
 				styles: {
 					name: 'styles',
 					test: /\.(sa|sc|c)ss$/,
@@ -14,19 +16,10 @@ module.exports = {
 			}
 		}
 	},
-	plugins: [
-		new MiniCssExtractPlugin({
-			filename: "styles.css",
-		})
-	],
 	entry: './src/containers/App/index.js',
 	output: {
 		path: path.resolve('./'),
 		filename: 'index.js'
-	},
-	watch: true,
-	resolve: {
-		extensions: ['*', '.js', '.jsx', '.scss']
 	},
 	module: {
 		rules: [
@@ -49,24 +42,20 @@ module.exports = {
 						options: { minimize: true }
 					}
 				]
-			}, {
+			},
+			{
 				test: /\.scss$/,
-				use: [
-					{
-						loader: MiniCssExtractPlugin.loader,
-						options: {
-							publicPath: './'
-						}
-					},
-					{
-						loader: 'css-loader'
-					}, {
-						loader: 'postcss-loader'
-					}, {
-						loader: 'sass-loader'
-					}],
-
+				use:  [  'style-loader', MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
 			}
 		]
-	}
+	},
+	plugins: [
+		new HtmlWebPackPlugin({
+			template: "./src/templates/index.html",
+			filename: "./index.html"
+		}),
+		new MiniCssExtractPlugin({
+			filename: "dist/[name].css",
+		})
+	],
 };
