@@ -10,7 +10,7 @@ export default {
 		},
 		{
 			"constellation": "Pisces",
-			"image": "https://i2.wp.com/www.whats-your-sign.com/wp-content/uploads/2017/12/ZodiacSymbolsForPisces1.jpg?fit=1600%2C1357&ssl=1",
+			"image": "https://i2.wp.com/www.whats-your-sign.com/wp-content/uploads/2017/12/ZodiacSymbolsForPisces1.jpg",
 			"dateRange": "February 19 – March 20",
 			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque impedit nihil quasi quisquam repudiandae vel. Ad, alias animi dignissimos dolorum earum ex laudantium magni maiores nisi sapiente sit temporibus, vero!",
 			"headline": false
