@@ -19,6 +19,7 @@
   "homepage": "https://github.com/pmbednarczyk/1-PW-render-json-data#readme",
   "dependencies": {
     "css-loader": "^0.28.11",
+    "prop-types": "^15.6.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1"
   },
