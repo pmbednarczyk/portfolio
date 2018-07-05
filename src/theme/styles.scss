@@ -1,3 +1,117 @@
+// Breakpoints
+$screen-md: 768px;
+$screen-lg: 992px;
+$screen-xl: 1200px;
+
+// Media queries mixins
+@mixin md {
+  @media (min-width: $screen-md) {
+    @content;
+  }
+}
+@mixin lg {
+  @media (min-width: $screen-lg) {
+    @content;
+  }
+}
+@mixin xl {
+  @media (min-width: $screen-xl) {
+    @content;
+  }
+}
+
+// Styles
 body {
   background: pink;
+}
+
+img {
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.horoscopeContainer {
+  margin: 15px 0;
+  .imgContainer {
+    text-align: center;
+    background: #d5dae1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .date {
+    text-transform: uppercase;
+    font-size: 15px;
+    line-height: 18px;
+    color: #999;
+    margin: 0 0 10px 0;
+    display: block;
+  }
+  .header {
+    text-align: center;
+    padding-bottom: 15px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 35px;
+    justify-content: center;
+    flex-flow: column;
+    margin-top: -25px;
+    @include xl {
+      flex-flow: row;
+    }
+    @include md {
+      margin-bottom: 20px;
+    }
+    @include xl {
+      margin-bottom: 25px;
+    }
+    span {
+      display: inline-block;
+      font-size: 28px;
+      text-transform: uppercase;
+      color: red;
+    }
+  }
+  .currentConstellation {
+    display: flex;
+    padding-bottom: 25px;
+    border-bottom: 2px solid #000;
+    margin-bottom: 25px;
+    .imgContainer {
+      width: calc(50% - 24px);
+    }
+    .contentContainer {
+      width: calc(50% + 24px);
+      padding-left: 20px;
+      h2 {
+        margin: 15px 0 5px;
+        text-transform: uppercase;
+      }
+    }
+  }
+  .signsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    li {
+      width: 100%;
+      margin-bottom: 15px;
+      @include md {
+        width: calc(50% - 10px);
+      }
+      @include xl {
+        width: calc(33.3% - 10px);
+      }
+      h3 {
+        margin: 15px 0 5px;
+        font-size: 16px;
+        text-transform: uppercase;
+      }
+    }
+  }
 }
