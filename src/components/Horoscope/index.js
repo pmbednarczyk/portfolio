@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 
 const Horoscope = () => {
 	return (
-		<div className="horoscopeContainer" />
+		<div className="horoscopeContainer">
+			<h2>Horoscope</h2>
+		</div>
 	);
 };
 
