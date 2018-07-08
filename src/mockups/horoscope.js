@@ -34,7 +34,7 @@ export default {
 			"image": "https://orig00.deviantart.net/558b/f/2011/124/2/4/gemini_complex_by_suryaasura-d3flyme.jpg",
 			"dateRange": "May 21 – June 20",
 			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque impedit nihil quasi quisquam repudiandae vel. Ad, alias animi dignissimos dolorum earum ex laudantium magni maiores nisi sapiente sit temporibus, vero!",
-			"headline": true
+			"headline": false
 		},
 		{
 			"constellation": "Cancer",
@@ -76,7 +76,7 @@ export default {
 			"image": "https://i.pinimg.com/originals/51/32/13/513213972b371d7173430a89e9f04884.jpg",
 			"dateRange": "November 22 – December 21",
 			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque impedit nihil quasi quisquam repudiandae vel. Ad, alias animi dignissimos dolorum earum ex laudantium magni maiores nisi sapiente sit temporibus, vero!",
-			"headline": false
+			"headline": true
 		},
 		{
 			"constellation": "Capricorn",

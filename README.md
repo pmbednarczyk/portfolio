@@ -1,7 +1,13 @@
-Pablo Workshops #1 - Render JSON Data 
+Pablo Workshops:
 
-Simple example of rendering JSON data in React components.
-With help of SCSS and Bootstrap 4. 
 
-1/ Files and structure
-2/ React props flow
+#1 Render JSON Data (Horoscope component);
+- Simple example of rendering JSON data in React components.
+
+
+#2 Slider (Slider component);
+- Simple example of rendering JSON data in React components.
+
+
+#3 Instagram Feed (Instagram component);
+- Simple example of rendering JSON data in React components.

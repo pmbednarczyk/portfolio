@@ -21,10 +21,6 @@ $screen-xl: 1200px;
 }
 
 // Styles
-body {
-  background: pink;
-}
-
 img {
   max-width: 100%;
 }
@@ -36,13 +32,6 @@ ul {
 
 .horoscopeContainer {
   margin: 15px 0;
-  .imgContainer {
-    text-align: center;
-    background: #d5dae1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
   .date {
     text-transform: uppercase;
     font-size: 15px;
@@ -78,17 +67,36 @@ ul {
     }
   }
   .currentConstellation {
+    height: 100vh;
     display: flex;
+    align-items: center;
+    justify-content: center;
     padding-bottom: 25px;
+    background: center center no-repeat;
+    background-size: cover;
     border-bottom: 2px solid #000;
     margin-bottom: 25px;
-    .imgContainer {
-      width: calc(50% - 24px);
+    position: relative;
+    @include md {
+      height: 668px;
     }
-    .contentContainer {
-      width: calc(50% + 24px);
+    &:after {
+      position: absolute;
+      content: '';
+      right: 0;
+      left: 0;
+      bottom: 0;
+      top: 0;
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+    .content{
+      z-index: 1;
+      color: #fff;
       padding-left: 20px;
+      max-width: 700px;
+      text-align: center;
       h2 {
+        font-size: 40px;
         margin: 15px 0 5px;
         text-transform: uppercase;
       }
@@ -106,6 +114,27 @@ ul {
       }
       @include xl {
         width: calc(33.3% - 10px);
+      }
+      .imgContainer {
+        text-align: center;
+        background: #d5dae1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+        height: 0;
+        padding-top: 60%;
+        img {
+          width: 100%;
+          top: 50%;
+          transform: translate(0%, -50%);
+          margin: 0 auto;
+          position: absolute;
+          left: 0;
+          min-width: 100%;
+          min-height: 100%;
+        }
       }
       h3 {
         margin: 15px 0 5px;

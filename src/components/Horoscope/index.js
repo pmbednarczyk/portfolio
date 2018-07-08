@@ -10,11 +10,8 @@ const Horoscope = ({ title }) => {
 		const currentMonth = months.find(month => month.headline);
 
 		return (
-			<div className="currentConstellation">
-				<div className="imgContainer">
-					<img src={currentMonth.image} alt={currentMonth.constellation} className="img-fluid" />
-				</div>
-				<div className="contentContainer">
+			<div className="currentConstellation" style={{ backgroundImage: `url(${currentMonth.image})`}}>
+				<div className="content">
 					<h2>{currentMonth.constellation}</h2>
 					<span className="date">{currentMonth.dateRange}</span>
 					<p>{currentMonth.description}</p>
