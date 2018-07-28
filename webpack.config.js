@@ -18,7 +18,7 @@ module.exports = {
 	},
 	entry: './src/containers/App/index.js',
 	output: {
-		path: path.resolve('./'),
+		path: __dirname + '/dist',
 		filename: 'index.js'
 	},
 	module: {
@@ -46,6 +46,16 @@ module.exports = {
 			{
 				test: /\.scss$/,
 				use:  [  'style-loader', MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+			},
+			{
+				test: /\.(eot|svg|ttf|woff|woff2)$/,
+				use: [{
+					loader: 'file-loader',
+					options: {
+						name: '[name].[ext]',
+						outputPath: 'fonts/'
+					}
+				}],
 			}
 		]
 	},
@@ -55,7 +65,7 @@ module.exports = {
 			filename: "./index.html"
 		}),
 		new MiniCssExtractPlugin({
-			filename: "dist/[name].css",
+			filename: "[name].css",
 		})
 	],
 };

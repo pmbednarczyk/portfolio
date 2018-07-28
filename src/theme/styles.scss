@@ -1,7 +1,30 @@
+@import "fonts";
+
 // Breakpoints
 $screen-md: 768px;
 $screen-lg: 992px;
 $screen-xl: 1200px;
+
+// Colors
+$font-color: #c1c1c1;
+$client-primary: #fff;
+$client-secondary: coral;
+$dark-bg: #171717;
+$light-bg: #eee;
+
+// Fonts
+$font-primary: Lato, Arial, sans-serif;
+$font-secondary: Roboto, Impact, sans-serif;
+
+// Other
+%clearfix {
+  &:after, &:before {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
 
 // Media queries mixins
 @mixin md {
@@ -20,7 +43,23 @@ $screen-xl: 1200px;
   }
 }
 
-// Styles
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: $font-color;
+  background: $dark-bg;
+  font-family: $font-primary;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5 {
+  color: $client-primary;
+  font-family: $font-secondary;
+  text-transform: uppercase;
+}
+
 img {
   max-width: 100%;
 }
@@ -30,8 +69,10 @@ ul {
   padding: 0;
 }
 
+// Horoscope component
 .horoscopeContainer {
   margin: 15px 0;
+  @extend %clearfix;
   .date {
     text-transform: uppercase;
     font-size: 15px;
@@ -48,22 +89,11 @@ ul {
     align-items: center;
     margin-bottom: 35px;
     justify-content: center;
-    flex-flow: column;
-    margin-top: -25px;
-    @include xl {
-      flex-flow: row;
-    }
     @include md {
       margin-bottom: 20px;
     }
     @include xl {
       margin-bottom: 25px;
-    }
-    span {
-      display: inline-block;
-      font-size: 28px;
-      text-transform: uppercase;
-      color: red;
     }
   }
   .currentConstellation {
@@ -142,5 +172,64 @@ ul {
         text-transform: uppercase;
       }
     }
+  }
+}
+
+// Slider component
+.slidesContainer {
+  @extend %clearfix;
+  height: 100vh;
+  min-height: 300px;
+  margin-bottom: 25px;
+  position: relative;
+  @include md {
+    height: 75vh;
+  }
+  .arrow {
+    position: absolute;
+    top: 45%;
+    z-index: 1;
+    &.prevSlide {
+      left: 2%;
+    }
+    &.nextSlide {
+      right: 2%;
+
+    }
+  }
+}
+
+.slideContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: center center no-repeat;
+  background-size: cover;
+  padding: 20px;
+  height: 100%;
+  h1 {
+    font-size: 42px;
+    @include lg {
+      font-size: 78px;
+    }
+    @include xl {
+      font-size: 102px;
+    }
+  }
+}
+
+
+.sliderTransition {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: all 300ms;
+  &-entered {
+    opacity: 1;
+  }
+  &-exited {
+    opacity: 0;
   }
 }

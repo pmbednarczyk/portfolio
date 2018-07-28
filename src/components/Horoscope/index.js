@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import data from '../../mockups/horoscope'
 
-
 const { currentDate, months } = data;
 const Horoscope = ({ title }) => {
 
