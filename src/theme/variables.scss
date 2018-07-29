@@ -1,0 +1,45 @@
+// Breakpoints
+$screen-md: 768px;
+$screen-lg: 992px;
+$screen-xl: 1200px;
+
+// Colors
+$font-color: #c1c1c1;
+$client-primary: #fff;
+$client-secondary: coral;
+$dark-bg: #171717;
+$light-bg: #eee;
+
+// Fonts
+$font-primary: Lato, Arial, sans-serif;
+$font-secondary: Roboto, Impact, sans-serif;
+
+// Other
+%clearfix {
+  &:after, &:before {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin transition($transition-property:all, $transition-time:0.3s, $method:ease-in-out) {
+  transition: $transition-property $transition-time $method;
+}
+
+// Media queries mixins
+@mixin md {
+  @media (min-width: $screen-md) {
+    @content;
+  }
+}
+@mixin lg {
+  @media (min-width: $screen-lg) {
+    @content;
+  }
+}
+@mixin xl {
+  @media (min-width: $screen-xl) {
+    @content;
+  }
+}

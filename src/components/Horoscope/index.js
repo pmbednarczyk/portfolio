@@ -40,7 +40,7 @@ const Horoscope = ({ title }) => {
 	};
 
 	return (
-		<div className="horoscopeContainer">
+		<div className="container horoscopeContainer">
 			<div className="header">
 				<h2>{title}</h2>
 				<span>{currentDate}</span>

@@ -8,7 +8,7 @@ const Slider = () => {
 	const renderSlides = () => (
 		data.map(slide => (
 			<div
-				className="slideContainer"
+				className="singleSlideContainer"
 				style={{backgroundImage: `url("${slide.imageSrc}")`}}
 				key={slide.title}
 			>
