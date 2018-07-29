@@ -139,6 +139,10 @@ ul {
 }
 
 // Slider component
+.sliderContainer {
+  position: relative;
+}
+
 .slidesContainer {
   @extend %clearfix;
   overflow: hidden;
@@ -208,4 +212,24 @@ ul {
   &-exited {
     opacity: 0;
   }
+}
+
+.infoBotTransition {
+  @include transition();
+  &-entered {
+    opacity: 1;
+  }
+  &-exited {
+    opacity: 0;
+  }
+}
+
+// InfoBot
+.infoBotContainer {
+  // To handle older browsers
+  position: absolute;
+  position: sticky;
+  z-index: 2;
+  top: 20px;
+  right: 20px;
 }

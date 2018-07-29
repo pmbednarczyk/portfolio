@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Slides from './components/Slides';
 import data from '../../mockups/slider';
+import InfoBot from '../InfoBot';
 
 const Slider = () => {
 
@@ -18,9 +19,12 @@ const Slider = () => {
 	);
 
 	return (
-		<Slides>
-			{renderSlides()}
-		</Slides>
+		<div className="sliderContainer">
+			<InfoBot info="Homemade (:D) slider." />
+			<Slides>
+				{renderSlides()}
+			</Slides>
+		</div>
 	);
 };
 
