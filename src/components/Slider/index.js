@@ -20,7 +20,7 @@ const Slider = () => {
 
 	return (
 		<div className="sliderContainer">
-			<InfoBot info="Homemade (:D) slider." />
+			<InfoBot info="'Homemade' slider with react transitions." />
 			<Slides>
 				{renderSlides()}
 			</Slides>

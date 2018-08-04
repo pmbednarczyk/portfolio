@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import data from '../../mockups/horoscope'
+import InfoBot from '../InfoBot';
 
 const { currentDate, months } = data;
 const Horoscope = ({ title }) => {
@@ -31,9 +32,11 @@ const Horoscope = ({ title }) => {
 						<div className="imgContainer">
 							<img src={item.image} alt={item.constellation} className="img-fluid" />
 						</div>
-						<h3>{item.constellation}</h3>
-						<span className="date">{item.dateRange}</span>
-						<p>{item.description}</p>
+						<div className="contentWrapper">
+							<h3>{item.constellation}</h3>
+							<span className="date">{item.dateRange}</span>
+							<p>{item.description}</p>
+						</div>
 					</li>))}
 			</ul>
 		);
@@ -41,10 +44,7 @@ const Horoscope = ({ title }) => {
 
 	return (
 		<div className="container horoscopeContainer">
-			<div className="header">
-				<h2>{title}</h2>
-				<span>{currentDate}</span>
-			</div>
+			<InfoBot info="Simple JSON data rendering into responsive grid layout" />
 			{renderCurrentConstellation()}
 			{renderMonths()}
 		</div>
