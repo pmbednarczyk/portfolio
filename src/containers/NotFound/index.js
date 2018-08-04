@@ -1,7 +1,6 @@
 import React from 'react';
-import Transition from 'react-transition-group/Transition';
 
-class Project extends React.Component {
+class NotFound extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -11,11 +10,11 @@ class Project extends React.Component {
 
 	render() {
 		return (
-			<div className="container projectContainer">
+			<div className="container notFoundContainer">
 				<h1>Project name</h1>
 			</div>
 		);
 	}
 }
 
-export default Project;
+export default NotFound;
