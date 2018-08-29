@@ -1,7 +1,7 @@
 #Pablo Workshops:
 
 
-###1/ Render JSON Data (Horoscope component);
+###1/ Render JSON Data (Technologies component);
 
 ###2/ Slider (Slider component);
 - Using component state and children props

@@ -1,5 +1,4 @@
 import React from 'react';
-import Horoscope from "../../components/Horoscope"
 import Slider from "../../components/Slider"
 
 class Home extends React.Component {
@@ -14,7 +13,6 @@ class Home extends React.Component {
 		return (
 			<div className="homeContainer">
 				<Slider />
-				<Horoscope />
 			</div>
 		);
 	}
