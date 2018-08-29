@@ -12,7 +12,7 @@ class Home extends React.Component {
 
 	render() {
 		return (
-			<div className="container homeContainer">
+			<div className="homeContainer">
 				<Slider />
 				<Horoscope />
 			</div>

@@ -8,6 +8,7 @@
 body {
   color: $font-color;
   background: $dark-bg;
+  background: #fff;
   font-family: $font-primary;
   margin: 0;
 }
@@ -145,6 +146,7 @@ ul {
 
 // Slider component
 .sliderContainer {
+  margin-top: 100vh;
   position: relative;
 }
 
