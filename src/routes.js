@@ -1,5 +1,4 @@
 export const HOME = '/';
 export const PROJECTS = '/projects';
-export const PROJECT = '/project/:name';
+export const PROJECT = '/projects/:name';
 export const TECHNOLOGIES = '/technologies';
-

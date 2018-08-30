@@ -18,7 +18,6 @@ import Technologies from '../Technologies';
 import Home from '../Home';
 import NotFound from '../NotFound';
 
-
 document.addEventListener('DOMContentLoaded', () => {
   class App extends React.Component {
     render() {
@@ -27,10 +26,10 @@ document.addEventListener('DOMContentLoaded', () => {
           <div>
             <Navigation />
             <Switch>
-              <Route path={routes.HOME}  exact component={Home} />
-              <Route path={routes.PROJECTS} exact component={Projects} />
+              <Route exact path={routes.HOME} component={Home} />
+              <Route exact path={routes.PROJECTS} component={Projects} />
               <Route path={routes.PROJECT} component={Project} />
-              <Route path={routes.TECHNOLOGIES} exact component={Technologies} />
+              <Route exact path={routes.TECHNOLOGIES} component={Technologies} />
               <Redirect from="/project" to="/projects"/>
               <Route component={NotFound} />
             </Switch>
