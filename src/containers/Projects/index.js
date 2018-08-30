@@ -10,7 +10,7 @@ class Projects extends React.Component {
         <h1>Project name</h1>
         <ul>
           <li>
-            <Link to="/finance-calculator">Finance calculator</Link>
+            <Link to="/project/finance-calculator">Finance calculator</Link>
           </li>
         </ul>
       </div>

@@ -3,7 +3,8 @@ import React from 'react';
 import {
   BrowserRouter as Router,
   Route,
-  Switch
+  Switch,
+  Redirect
 } from 'react-router-dom'
 import createBrowserHistory from 'history/createBrowserHistory'
 
@@ -17,20 +18,20 @@ import Technologies from '../Technologies';
 import Home from '../Home';
 import NotFound from '../NotFound';
 
-const history = createBrowserHistory();
 
 document.addEventListener('DOMContentLoaded', () => {
   class App extends React.Component {
     render() {
       return (
-        <Router history={history}>
+        <Router>
           <div>
             <Navigation />
             <Switch>
               <Route path={routes.HOME}  exact component={Home} />
               <Route path={routes.PROJECTS} exact component={Projects} />
-              <Route path={routes.PROJECT} exact component={Project} />
+              <Route path={routes.PROJECT} component={Project} />
               <Route path={routes.TECHNOLOGIES} exact component={Technologies} />
+              <Redirect from="/project" to="/projects"/>
               <Route component={NotFound} />
             </Switch>
             <Footer />
