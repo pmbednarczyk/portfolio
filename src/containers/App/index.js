@@ -17,13 +17,13 @@ import Technologies from '../Technologies';
 import Home from '../Home';
 import NotFound from '../NotFound';
 
-const history = createBrowserHistory()
+const history = createBrowserHistory();
 
 document.addEventListener('DOMContentLoaded', () => {
   class App extends React.Component {
     render() {
       return (
-        <Router>
+        <Router history={history}>
           <div>
             <Navigation />
             <Switch>

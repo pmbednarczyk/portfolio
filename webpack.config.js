@@ -19,7 +19,8 @@ module.exports = {
 	entry: './src/containers/App/index.js',
 	output: {
 		path: __dirname + '/dist',
-		filename: 'index.js'
+		filename: 'index.js',
+    publicPath: '/'
 	},
 	module: {
 		rules: [
@@ -59,6 +60,9 @@ module.exports = {
 			}
 		]
 	},
+  devServer: {
+    historyApiFallback: true,
+  },
 	plugins: [
 		new HtmlWebPackPlugin({
 			template: "./src/templates/index.html",
