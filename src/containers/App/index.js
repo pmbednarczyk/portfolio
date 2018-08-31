@@ -18,30 +18,25 @@ import Technologies from '../Technologies';
 import Home from '../Home';
 import NotFound from '../NotFound';
 
-document.addEventListener('DOMContentLoaded', () => {
-  class App extends React.Component {
-    render() {
-      return (
-        <Router>
-          <div>
-            <Navigation />
-            <Switch>
-              <Route exact path={routes.HOME} component={Home} />
-              <Route exact path={routes.PROJECTS} component={Projects} />
-              <Route path={routes.PROJECT} component={Project} />
-              <Route exact path={routes.TECHNOLOGIES} component={Technologies} />
-              <Redirect from="/project" to="/projects"/>
-              <Route component={NotFound} />
-            </Switch>
-            <Footer />
-          </div>
-        </Router>
-      );
-    }
+class App extends React.Component {
+  render() {
+    return (
+      <Router>
+        <div>
+          <Navigation />
+          <Switch>
+            <Route exact path={routes.HOME} component={Home} />
+            <Route exact path={routes.PROJECTS} component={Projects} />
+            <Route path={routes.PROJECT} component={Project} />
+            <Route exact path={routes.TECHNOLOGIES} component={Technologies} />
+            <Redirect from="/project" to="/projects"/>
+            <Route component={NotFound} />
+          </Switch>
+          <Footer />
+        </div>
+      </Router>
+    );
   }
+}
 
-  ReactDOM.render(
-    <App />,
-    document.querySelector('#app'),
-  );
-});
+export default App;

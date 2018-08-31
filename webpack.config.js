@@ -16,7 +16,7 @@ module.exports = {
 			}
 		}
 	},
-	entry: './src/containers/App/index.js',
+	entry: './src/client.js',
 	output: {
 		path: __dirname + '/dist',
 		filename: 'index.js',
