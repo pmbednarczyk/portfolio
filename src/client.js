@@ -1,12 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import App from './containers/App';
-import store from './redux/store';
+import { Provider } from 'react-redux'
+import React from 'react'
+import ReactDOM from 'react-dom'
+import store, { history } from './redux/store'
+import App from './containers/App'
 
-ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  document.querySelector('#app'),
-);
+const render = () => {
+  ReactDOM.render(
+      <Provider store={store}>
+        <App history={history} />
+      </Provider>,
+    document.getElementById('app')
+  )
+};
+
+render();
