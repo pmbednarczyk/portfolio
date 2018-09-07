@@ -16,10 +16,11 @@ module.exports = {
 			}
 		}
 	},
-	entry: './src/containers/App/index.js',
+	entry: './src/client.js',
 	output: {
-		path: path.resolve('./'),
-		filename: 'index.js'
+		path: __dirname + '/dist',
+		filename: 'index.js',
+    publicPath: '/'
 	},
 	module: {
 		rules: [
@@ -46,16 +47,29 @@ module.exports = {
 			{
 				test: /\.scss$/,
 				use:  [  'style-loader', MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+			},
+			{
+				test: /\.(eot|svg|ttf|woff|woff2)$/,
+				use: [{
+					loader: 'file-loader',
+					options: {
+						name: '[name].[ext]',
+						outputPath: 'fonts/'
+					}
+				}],
 			}
 		]
 	},
+  devServer: {
+    historyApiFallback: true,
+  },
 	plugins: [
 		new HtmlWebPackPlugin({
 			template: "./src/templates/index.html",
 			filename: "./index.html"
 		}),
 		new MiniCssExtractPlugin({
-			filename: "dist/[name].css",
+			filename: "[name].css",
 		})
 	],
 };

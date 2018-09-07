@@ -1,3 +1,265 @@
+@import "fonts";
+@import "variables";
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  position: relative;
+}
+
 body {
+  color: $font-color;
+  background: $dark-bg;
+  font-family: $font-primary;
+  margin: 0;
+  padding-bottom: 200px;
+  min-height: 100%;
+}
+
+a {
+  &, &:visited {
+    color: $font-color;
+  }
+}
+
+h1, h2, h3, h4, h5 {
+  color: $client-primary;
+  font-family: $font-secondary;
+  text-transform: uppercase;
+}
+
+img {
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.container {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  @extend %clearfix;
+}
+
+// Navigation
+.navigationContainer {
+  display: flex;
+  flex-wrap: wrap;
+  li {
+    margin-right: 10px;
+  }
+}
+
+// Technologies component
+.technologiesContainer {
+  margin: 15px auto;
+  @extend %clearfix;
+  .header {
+    text-align: center;
+    padding-bottom: 15px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 35px;
+    justify-content: center;
+    @include md {
+      margin-bottom: 20px;
+    }
+    @include xl {
+      margin-bottom: 25px;
+    }
+  }
+  .featuredTechnology {
+    height: 50vh;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 25px;
+    background: center center no-repeat;
+    background-size: cover;
+    border-bottom: 2px solid #000;
+    margin-bottom: 25px;
+    position: relative;
+    &:after {
+      position: absolute;
+      content: '';
+      right: 0;
+      left: 0;
+      bottom: 0;
+      top: 0;
+      @include whiteRadialGradient;
+    }
+    .content {
+      z-index: 1;
+      color: #fff;
+      padding-left: 20px;
+      max-width: 700px;
+      text-align: center;
+      h2 {
+        font-size: 40px;
+        margin: 15px 0 5px;
+        text-transform: uppercase;
+      }
+    }
+  }
+  .technologiesList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    li {
+      width: 100%;
+      margin-bottom: 15px;
+      @include md {
+        width: calc(50% - 10px);
+      }
+      @include xl {
+        width: calc(33.3% - 10px);
+      }
+      .contentWrapper {
+        padding: 2%;
+        background: lighten($dark-bg, 5%);
+      }
+      .imgContainer {
+        text-align: center;
+        background: #d5dae1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+        height: 0;
+        padding-top: 60%;
+        img {
+          width: 100%;
+          top: 50%;
+          transform: translate(0%, -50%);
+          margin: 0 auto;
+          position: absolute;
+          left: 0;
+          min-width: 100%;
+          min-height: 100%;
+        }
+      }
+      h3 {
+        margin: 15px 0 5px;
+        font-size: 16px;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+// Slider component
+.sliderContainer {
+  margin-top: 100vh;
+  position: relative;
+}
+
+.slidesContainer {
+  @extend %clearfix;
+  overflow: hidden;
+  height: 100vh;
+  min-height: 300px;
+  margin-bottom: 25px;
+  position: relative;
+  @include md {
+    height: 75vh;
+  }
+  &:hover {
+    .arrow {
+      opacity: 1;
+      &.prevSlide {
+        left: 2%;
+      }
+      &.nextSlide {
+        right: 2%;
+      }
+    }
+  }
+  .arrow {
+    @include transition();
+    position: absolute;
+    top: 45%;
+    cursor: pointer;
+    z-index: 1;
+    opacity: 0;
+    &.prevSlide {
+      left: -3%;
+    }
+    &.nextSlide {
+      right: -3%;
+    }
+  }
+}
+
+.singleSlideContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: center center no-repeat;
+  background-size: cover;
+  padding: 20px;
+  height: 100%;
+  h1 {
+    font-size: 42px;
+    @include lg {
+      font-size: 78px;
+    }
+    @include xl {
+      font-size: 102px;
+    }
+  }
+}
+
+// Transition effects
+.sliderTransition {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  @include transition();
+  &-entered {
+    opacity: 1;
+  }
+  &-exited {
+    opacity: 0;
+  }
+}
+
+.infoBotTransition {
+  @include transition();
+  &-entered {
+    opacity: 1;
+  }
+  &-exited {
+    opacity: 0;
+  }
+}
+
+// InfoBot
+.infoBotContainer {
+  position: absolute;
+  z-index: 2;
+  top: 20px;
+  left: 20px;
+}
+
+// Footer
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   background: red;
+  height: 200px;
+  display: flex;
+  align-items: center;
 }
