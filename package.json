@@ -1,7 +1,7 @@
 {
-  "name": "1-pw-render-json-data",
+  "name": "Pablo's Portfolio",
   "version": "1.0.0",
-  "description": "Pablo Workshops #1 - Render JSON Data",
+  "description": "Pablo's Portfolio made from S C R A T C H!",
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode production",
