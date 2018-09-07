@@ -23,6 +23,10 @@ $font-secondary: Roboto, Impact, sans-serif;
   }
 }
 
+@mixin whiteRadialGradient {
+  background: radial-gradient(ellipse at center, rgba(250,198,149,0) 1%,rgba(140,111,84,0) 40%,rgba(3,2,2,0.4) 89%,rgba(0,0,0,0.4) 90%);
+}
+
 @mixin transition($transition-property:all, $transition-time:0.3s, $method:ease-in-out) {
   transition: $transition-property $transition-time $method;
 }

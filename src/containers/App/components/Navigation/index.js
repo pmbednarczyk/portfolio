@@ -9,7 +9,6 @@ import { showBackButton } from '../../../../redux/modules/backButton';
 import GoBackButton from '../../../../components/GoBackButton';
 
 class Navigation extends React.Component {
-
   componentWillReceiveProps(prevProps) {
     const { pathname = '', showBackButton } = this.props;
     const { pathname: prevPathname = '' } = prevProps;
@@ -21,12 +20,11 @@ class Navigation extends React.Component {
 
   render() {
     return (
-      <ul>
-        <GoBackButton isVisible={this.props.backButtonVisible}  />
+      <ul className="navigationContainer">
+        <li><GoBackButton isVisible={this.props.backButtonVisible}  /></li>
         <li><Link to={routes.HOME}>Home</Link></li>
         <li><Link to={routes.TECHNOLOGIES}>Technologies</Link></li>
         <li><Link to={routes.PROJECTS}>Projects</Link></li>
-        <Link to="/projects/finance-calculator">Finance calculator</Link>
       </ul>
     )
   }
@@ -41,16 +39,4 @@ const mapDispatchToProps = (dispatch) => (
   bindActionCreators({ showBackButton }, dispatch)
 );
 
-
-/*
-@connect(({ backButton, routing }) => ({
-  backButtonVisible: backButton.isVisible,
-  pathname: routing.location.pathname,
-}), {
-  showBackButton,
-})
-*/
-
 export default connect(mapStateToProps, mapDispatchToProps)(Navigation);
-
-

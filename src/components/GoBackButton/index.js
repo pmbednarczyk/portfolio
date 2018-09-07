@@ -1,25 +1,20 @@
 import React from 'react';
-import MediaQuery from 'react-responsive';
 import PropTypes from 'prop-types';
-import isMobile from '../../helpers/isMobile';
+import { withRouter } from 'react-router-dom';
 
-const GoBackButton = ({ isVisible }) => {
-  const defaultMediaValue = isMobile() ? 360 : 1200;
+const GoBackButton = ({ isVisible, history }) => {
 
   if (!isVisible) {
     return null;
   }
 
   return (
-    <MediaQuery maxWidth={1199} values={{width: defaultMediaValue}} component="div">
       <button
         className="icon-arrow-left"
-        onClick={() => {
-        }}
+        onClick={() => history.goBack()}
       >
         GO BACK
       </button>
-    </MediaQuery>
   );
 };
 
@@ -27,4 +22,4 @@ GoBackButton.propTypes = {
   isVisible: PropTypes.bool,
 };
 
-export default GoBackButton;
+export default withRouter(GoBackButton);
