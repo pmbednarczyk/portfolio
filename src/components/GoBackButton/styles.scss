@@ -1,0 +1,17 @@
+.goBackBtn {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  font-size: 30px;
+  @include md {
+    color: #9b9b9b;
+  }
+  &.post {
+    color: #fff;
+    text-shadow: 0 0 3px #000, 0 0 32px rgba(0, 0, 0, 0.64);
+    @include md {
+      color: #9b9b9b;;
+      text-shadow: none;
+    }
+  }
+}

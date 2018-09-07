@@ -10,7 +10,6 @@ class InfoBot extends React.Component {
 		};
 	}
 
-	//todo: handle redux history and compare current and prev pathname
 
 	@autobind
 	toggleInfo() {

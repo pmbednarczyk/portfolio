@@ -5,12 +5,24 @@
   box-sizing: border-box;
 }
 
+html {
+  min-height: 100%;
+  position: relative;
+}
+
 body {
   color: $font-color;
   background: $dark-bg;
-  background: #fff;
   font-family: $font-primary;
   margin: 0;
+  padding-bottom: 200px;
+  min-height: 100%;
+}
+
+a {
+  &, &:visited {
+    color: $font-color;
+  }
 }
 
 h1, h2, h3, h4, h5 {
@@ -36,18 +48,19 @@ ul {
   @extend %clearfix;
 }
 
-// Horoscope component
-.horoscopeContainer {
+// Navigation
+.navigationContainer {
+  display: flex;
+  flex-wrap: wrap;
+  li {
+    margin-right: 10px;
+  }
+}
+
+// Technologies component
+.technologiesContainer {
   margin: 15px auto;
   @extend %clearfix;
-  .date {
-    text-transform: uppercase;
-    font-size: 15px;
-    line-height: 18px;
-    color: #999;
-    margin: 0 0 10px 0;
-    display: block;
-  }
   .header {
     text-align: center;
     padding-bottom: 15px;
@@ -63,7 +76,7 @@ ul {
       margin-bottom: 25px;
     }
   }
-  .currentConstellation {
+  .featuredTechnology {
     height: 50vh;
     min-height: 300px;
     display: flex;
@@ -82,7 +95,7 @@ ul {
       left: 0;
       bottom: 0;
       top: 0;
-      background-color: rgba(0, 0, 0, 0.3);
+      @include whiteRadialGradient;
     }
     .content {
       z-index: 1;
@@ -97,7 +110,7 @@ ul {
       }
     }
   }
-  .signsContainer {
+  .technologiesList {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -206,6 +219,7 @@ ul {
   }
 }
 
+// Transition effects
 .sliderTransition {
   position: absolute;
   top: 0;
@@ -237,4 +251,15 @@ ul {
   z-index: 2;
   top: 20px;
   left: 20px;
+}
+
+// Footer
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: red;
+  height: 200px;
+  display: flex;
+  align-items: center;
 }
